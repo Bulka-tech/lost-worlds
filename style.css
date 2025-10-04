@@ -1,0 +1,61 @@
+:root{
+  --bg: #050612;
+  --panel: #081018;
+  --accent: #8fb5ff;
+  --muted: #9fb4c8;
+  --text: #dfe8f2;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Monaco, "Roboto Mono", monospace;
+}
+
+*{ box-sizing: border-box; }
+html,body{ height:100%; margin:0; background: linear-gradient(180deg,#04060a,#071018); color:var(--text); font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+#header{ display:flex; align-items:center; justify-content:space-between; gap:12px; padding:12px 18px; max-width:1100px; margin:10px auto; }
+#header h1{ margin:0; font-size:18px; color:var(--text); letter-spacing:0.5px; }
+#controls{ opacity:0.9; font-size:13px; color:var(--muted); }
+#meta button{ margin-left:8px; background:var(--accent); border:none; color:#041022; padding:6px 10px; border-radius:6px; cursor:pointer; font-weight:700; }
+
+#gameWrap{ width:100%; max-width:1100px; margin: 6px auto; position:relative; }
+#game{
+  width:100%;
+  height:680px;
+  display:block;
+  border-radius:8px;
+  image-rendering: pixelated;
+  background: linear-gradient(180deg,#0b1b2a,#06101a);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.85), inset 0 2px 6px rgba(255,255,255,0.02);
+  outline: 2px solid rgba(255,255,255,0.02);
+}
+
+#ui{ position:absolute; left:12px; top:12px; pointer-events:none; width: calc(100% - 24px); }
+#hud{ display:flex; gap:12px; align-items:center; pointer-events:auto; }
+.hudItem{ background: rgba(0,0,0,0.35); padding:8px 12px; border-radius:8px; font-weight:700; font-size:14px; color:var(--text); display:flex; align-items:center; gap:8px; }
+
+#message{ position:absolute; left:50%; transform:translateX(-50%); bottom:14px; background: rgba(0,0,0,0.45); padding:8px 12px; border-radius:8px; font-size:13px; pointer-events:none; color:#bcd9ff; }
+
+#narrative{
+  position: absolute;
+  left: 50%;
+  top: 14%;
+  transform: translateX(-50%);
+  padding: 16px 18px;
+  background: rgba(2,4,8,0.85);
+  color: #eaf6ff;
+  border-radius: 10px;
+  max-width: 760px;
+  text-align:center;
+  z-index:9999;
+  display:none;
+}
+#narrative.show { display:block; animation: fadein 320ms ease; }
+
+.hidden{ display:none; }
+
+@keyframes fadein { from { opacity:0; transform:translateX(-50%) translateY(-8px) } to { opacity:1; transform:translateX(-50%) translateY(0) } }
+
+#foot{ max-width:1100px; margin:12px auto; text-align:center; color:rgba(200,215,230,0.45); font-size:12px; }
+
+@media (max-width:700px){
+  #game{ height:520px; }
+  #header{ flex-direction:column; gap:8px; align-items:start; }
+}
