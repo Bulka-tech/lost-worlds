@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lost Worlds — Way Home (Hollow-Knight vibe)</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="header">
+    <h1>Lost Worlds — Way Home</h1>
+    <div id="controls">Move: <strong>A/D</strong> • Jump: <strong>W / Space</strong> • Dash: <strong>Shift</strong> • Use: <strong>E</strong></div>
+    <div id="meta">
+      <button id="restartBtn">Restart</button>
+      <button id="saveBtn">Save</button>
+      <button id="loadBtn">Load</button>
+      <button id="muteBtn">Mute</button>
+    </div>
+  </div>
+
+  <div id="gameWrap">
+    <canvas id="game" tabindex="0"></canvas>
+    <div id="ui">
+      <div id="hud">
+        <div id="health" class="hudItem">❤ × <span id="hp">5</span></div>
+        <div id="souls" class="hudItem">⚪ × <span id="soulCount">0</span></div>
+        <div id="stage" class="hudItem">Stage: <span id="stageText">Tutorial</span></div>
+      </div>
+      <div id="message">You wake up in a strange silent world. Find a way home.</div>
+    </div>
+  </div>
+
+  <div id="narrative" class="hidden"></div>
+
+  <footer id="foot">
+    <small>Copy these files to a GitHub repo and enable Pages (main → root).</small>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
